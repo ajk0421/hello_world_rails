@@ -4,15 +4,14 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
+  def show
+  end
+
   def create
     User.create!(user_params)
   end
 
-  def show
-  end
-
   def update
-    binding.pry
     @user.update!(user_params)
   end
 
@@ -22,11 +21,12 @@ class UsersController < ApplicationController
 
   private
 
+  def set_user
+    @user = User.find(params[:id])
+  end
+
   def user_params
     params.require(:user).permit(:account, :name, :email)
   end
 
-  def set_user
-    @user = User.find(params[:id])
-  end
 end
