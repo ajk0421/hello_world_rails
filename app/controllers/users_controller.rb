@@ -4,11 +4,12 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
-  def create
-    User.create!(user_params)
+  def show
   end
 
-  def show
+  def create
+    User.create!(user_params)
+
   end
 
   def update
@@ -29,3 +30,4 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 end
+
