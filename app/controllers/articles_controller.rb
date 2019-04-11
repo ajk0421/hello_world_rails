@@ -2,11 +2,11 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: [:update, :destroy]
 
   def index
-    @articles = Article.all
+    @articles = Article.where(public_status: true)
   end
 
   def show
-    @article = Article.find(params[:id])
+    @article = current_user ? current_user.articles.find(params[:id]) : Article.find(params[:id])
   end
 
   def create
@@ -28,6 +28,6 @@ class ArticlesController < ApplicationController
     end
 
     def article_params
-      params.require(:article).permit(:title, :body)
+      params.require(:article).permit(:title, :body, :public_statu)
     end
 end
