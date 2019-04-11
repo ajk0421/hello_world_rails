@@ -6,7 +6,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @article = current_user ? current_user.articles.find(params[:id]) : Article.published
+    @article = current_user ? current_user.articles.find(params[:id]) : Article.published.find(params[:id])
   end
 
   def create
