@@ -9,7 +9,6 @@ class UsersController < ApplicationController
 
   def create
     User.create!(user_params)
-
   end
 
   def update
@@ -21,7 +20,7 @@ class UsersController < ApplicationController
   end
 
   private
-  
+
   def set_user
     @user = User.find(params[:id])
   end
