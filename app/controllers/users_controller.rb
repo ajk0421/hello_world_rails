@@ -6,16 +6,9 @@ class UsersController < ApplicationController
 
   def show
   end
-<<<<<<< HEAD
 
   def create
     User.create!(user_params)
-
-=======
-
-  def create
-    User.create!(user_params)
->>>>>>> 110a039... 課題１
   end
 
   def update
@@ -27,10 +20,6 @@ class UsersController < ApplicationController
   end
 
   private
-  
-  def set_user
-    @user = User.find(params[:id])
-  end
 
   def set_user
     @user = User.find(params[:id])
@@ -40,8 +29,4 @@ class UsersController < ApplicationController
     params.require(:user).permit(:account, :name, :email)
   end
 
-<<<<<<< HEAD
 end
-=======
-end
->>>>>>> 110a039... 課題１
