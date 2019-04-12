@@ -1,5 +1,5 @@
 class Article < ApplicationRecord
   belongs_to :user
 
-  scope :published, -> { where(public_status: true) }
+  enum status: {draft: 0, published: 1}
 end
